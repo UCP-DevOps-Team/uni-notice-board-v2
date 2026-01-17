@@ -51,11 +51,19 @@
         <script>
             (function () {
                 const links = document.querySelectorAll(".nav-links a");
-                const path = window.location.pathname;
-                const page = path.split("/").pop() || "index.html";
+                const currentPath = window.location.pathname;
 
                 links.forEach((link) => {
-                    if (link.getAttribute("href") === page) {
+                    const linkHref = link.getAttribute("href");
+
+                    if (
+                        currentPath === "/" ||
+                        currentPath.endsWith("index.html")
+                    ) {
+                        if (linkHref === "index.html") {
+                            link.classList.add("active");
+                        }
+                    } else if (currentPath.includes(linkHref)) {
                         link.classList.add("active");
                     }
                 });
