@@ -1,0 +1,7 @@
+**/.gitignore
+**/Dockerfile
+**/.parcel-cache
+**/node_modules
+.github
+.git
+.secrets

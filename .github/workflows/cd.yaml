@@ -1,0 +1,23 @@
+name: CD Pipeline
+
+on:
+    workflow_run:
+        workflows: ["CI Pipeline"]
+        types:
+            - completed
+        branches:
+            - develop
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        environment: "development"
+
+        # This condition ensures deployment only happens if the CI was successful
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+        steps:
+            - name: Deploy Develop Branch Code On Render
+              run: |
+                  echo "CI Pipeline successful. Triggering Render deployment..."
+                  curl -X POST ${{ secrets.RENDER_CALLBACK_URL }}

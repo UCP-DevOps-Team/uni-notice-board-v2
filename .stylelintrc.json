@@ -1,0 +1,9 @@
+{
+    "rules": {
+        "block-no-empty": true,
+        "color-no-invalid-hex": true,
+        "selector-type-case": "lower",
+        "unit-allowed-list": ["em", "rem", "px", "%", "vh", "vw", "s"],
+        "declaration-block-no-duplicate-properties": true
+    }
+}
