@@ -1,73 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="University Digital Notice Board" />
-        <link rel="stylesheet" href="../styles/style.css" />
-        <title>University Digital Notice Board</title>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-                <div class="container">
-                    <h1 class="logo">UniNotice</h1>
-                    <ul class="nav-links">
-                        <li><a href="index.html" data-page="index">Home</a></li>
-                        <li>
-                            <a href="notices.html" data-page="notices"
-                                >Notices</a
-                            >
-                        </li>
-                        <li>
-                            <a href="exams.html" data-page="exams">Exams</a>
-                        </li>
-                        <li>
-                            <a href="admissions.html" data-page="admissions"
-                                >Admissions</a
-                            >
-                        </li>
-                        <li>
-                            <a href="contact.html" data-page="contact"
-                                >Contact</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
 
-        <main class="container"></main>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="University Digital Notice Board" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>University Digital Notice Board</title>
+</head>
 
-        <footer>
+<body>
+    <header>
+        <nav class="navbar">
             <div class="container">
-                <p>
-                    &copy; 2026 University Digital Notice Board | Powered by
-                    Devops Team
-                </p>
+                <h1 class="logo">UniNotice</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-page="index">Home</a></li>
+                    <li>
+                        <a href="notices.html" data-page="notices">Notices</a>
+                    </li>
+                    <li>
+                        <a href="events.html" data-page="events">Events</a>
+                    </li>
+                    <li>
+                        <a href="exams.html" data-page="exams">Exams</a>
+                    </li>
+                    <li>
+                        <a href="admissions.html" data-page="admissions">Admissions</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" data-page="contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </footer>
+        </nav>
+    </header>
 
-        <script>
-            (function () {
-                const links = document.querySelectorAll(".nav-links a");
-                const currentPath = window.location.pathname;
+    <main class="container"></main>
 
-                links.forEach((link) => {
-                    const linkHref = link.getAttribute("href");
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 University Digital Notice Board | Powered by
+                Devops Team
+            </p>
+        </div>
+    </footer>
 
-                    if (
-                        currentPath === "/" ||
-                        currentPath.endsWith("index.html")
-                    ) {
-                        if (linkHref === "index.html") {
-                            link.classList.add("active");
-                        }
-                    } else if (currentPath.includes(linkHref)) {
-                        link.classList.add("active");
-                    }
-                });
-            })();
-        </script>
-    </body>
+    <script>
+        (function () {
+            const links = document.querySelectorAll(".nav-links a");
+            const currentPath = window.location.pathname;
+
+            links.forEach((link) => {
+                const linkHref = link.getAttribute("href");
+
+                if (
+                    currentPath === "/" ||
+                    currentPath.endsWith("index.html")
+                ) {
+                    link.classList.add("active");
+                } else if (currentPath.includes(linkHref)) {
+                    link.classList.add("active");
+                }
+            });
+        })();
+    </script>
+</body>
+
 </html>
