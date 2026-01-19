@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="University Digital Notice Board" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/exams.css" />
     <title>University Digital Notice Board</title>
 </head>
 
@@ -36,7 +37,56 @@
         </nav>
     </header>
 
-    <main class="container"></main>
+    <main class="container">
+        <section class="exam-section">
+            <h2>Mid-Term Examination Schedule</h2>
+
+            <table class="exam-table">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Room</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CS-301</td>
+                        <td>Software Engineering</td>
+                        <td>2026-02-05</td>
+                        <td>09:00 AM - 11:00 AM</td>
+                        <td>Room A1</td>
+                    </tr>
+                    <tr>
+                        <td>CS-305</td>
+                        <td>Operating Systems</td>
+                        <td>2026-02-07</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Room B2</td>
+                    </tr>
+                    <tr>
+                        <td>CS-310</td>
+                        <td>Web Engineering</td>
+                        <td>2026-02-10</td>
+                        <td>01:00 PM - 03:00 PM</td>
+                        <td>Lab L3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="exam-section">
+            <h2>Exam Instructions</h2>
+            <ul class="exam-rules">
+                <li>Bring your university ID card.</li>
+                <li>Arrive at least 15 minutes before exam time.</li>
+                <li>Electronic devices are not allowed.</li>
+                <li>Follow invigilator instructions strictly.</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -46,28 +96,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        (function () {
-            const links = document.querySelectorAll(".nav-links a");
-            const currentPath = window.location.pathname;
-
-            links.forEach((link) => {
-                const linkHref = link.getAttribute("href");
-
-                if (
-                    currentPath === "/" ||
-                    currentPath.endsWith("index.html")
-                ) {
-                    if (linkHref === "index.html") {
-                        link.classList.add("active");
-                    }
-                } else if (currentPath.includes(linkHref)) {
-                    link.classList.add("active");
-                }
-            });
-        })();
-    </script>
 </body>
 
 </html>
