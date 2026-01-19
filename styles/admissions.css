@@ -1,251 +1,309 @@
-/* Admissions Page Special Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --admission-accent: #2563eb;
-    --admission-bg: #f8fafc;
-    --admission-card-bg: rgba(255, 255, 255, 0.8);
-    --admission-border: rgba(226, 232, 240, 0.8);
-    --admission-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --primary-gradient: linear-gradient(to bottom right, #f0f9ff 0%, #e0e7ff 100%);
+    --accent-gradient: linear-gradient(to bottom right, #6366f1 0%, #a855f7 100%);
+    --bg-light: #fdfdfd;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #4f46e5;
+    --success: #059669;
+    --warning: #d97706;
 }
 
-.admissions-page {
-    padding-bottom: 4rem;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
 /* Hero Section */
-.admission-hero {
-    background: var(--admission-gradient);
-    padding: 6rem 0;
+.admission-header {
     text-align: center;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 5rem;
+    padding: 5rem 2rem;
+    background: var(--primary-gradient);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: 32px;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease-out;
 }
 
-.hero-content h1 {
+.admission-header h2 {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero-content .text-accent {
-    color: var(--accent);
-}
-
-.hero-content p {
+.admission-header p {
     font-size: 1.25rem;
     color: var(--text-muted);
     max-width: 700px;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
 }
 
-.hero-cta {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+/* Sections Styling */
+section {
+    margin-bottom: 6rem;
+    animation: slideUp 0.8s ease-out backwards;
 }
 
-.btn-primary, .btn-secondary {
-    padding: 0.75rem 2rem;
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.btn-primary {
-    background: var(--accent);
-    color: var(--white);
-}
-
-.btn-primary:hover {
-    background: var(--accent-hover);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: var(--surface);
-    color: var(--text-main);
-    border: 1px solid var(--border);
-}
-
-.btn-secondary:hover {
-    background: var(--bg);
-    transform: translateY(-2px);
-}
-
-/* Sections Common */
-.section-title {
+h3 {
     font-size: 2rem;
-    text-align: center;
-    margin-bottom: 3rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
     color: var(--text-main);
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-header p {
-    color: var(--text-muted);
-}
-
-/* Admission Steps */
-.admission-steps {
-    padding: 4rem 0;
-    background: var(--white);
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.step-card {
-    background: var(--admission-card-bg);
-    border: 1px solid var(--admission-border);
-    padding: 2rem;
-    border-radius: var(--radius);
     position: relative;
-    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
-.step-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-}
-
-.step-number {
-    font-size: 3rem;
-    font-weight: 800;
-    color: rgba(59, 130, 246, 0.1);
+h3::after {
+    content: '';
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
 }
 
-.step-card h3 {
-    margin-bottom: 1rem;
-    color: var(--primary);
-}
-
-.step-card p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-/* Programs Section */
-.admission-programs {
-    padding: 4rem 0;
-    background: var(--bg);
-}
-
-.programs-grid {
+/* Program Cards */
+.program-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 100%));
     gap: 2rem;
 }
 
 .program-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
     padding: 2.5rem;
-    border-radius: var(--radius);
-    transition: all 0.3s ease;
+    border-radius: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .program-card:hover {
+    transform: translateY(-8px);
     border-color: var(--accent);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1);
 }
 
-.program-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.program-card h3 {
+.program-card h4 {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
 }
 
-.program-details {
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge.open {
+    background: #ecfdf5;
+    color: var(--success);
+}
+
+.badge.limited {
+    background: #fffbeb;
+    color: var(--warning);
+}
+
+/* Eligibility & Scholarships Lists */
+.eligibility ul,
+.scholarships ul {
     list-style: none;
     padding: 0;
 }
 
-.program-details li {
-    padding: 0.5rem 0;
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--bg);
+.eligibility li,
+.scholarships li {
+    background: #f8fafc;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border-left: 4px solid var(--accent);
+    transition: transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.program-details li:last-child {
-    border-bottom: none;
+.eligibility li:hover,
+.scholarships li:hover {
+    transform: translateX(10px);
+    background: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* Deadlines Table */
-.admission-deadlines {
-    padding: 4rem 0;
-}
-
-.deadlines-table-container {
-    background: var(--surface);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    overflow: hidden;
-}
-
-.deadlines-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.deadlines-table th, .deadlines-table td {
-    padding: 1.25rem 2rem;
-    text-align: left;
-}
-
-.deadlines-table th {
-    background: var(--bg);
+/* Buttons */
+.btn-primary {
+    background: var(--accent-gradient);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.125rem;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.4);
+}
+
+/* Steps to Apply Section */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    gap: 2rem;
+}
+
+.step-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
+    transform: translateX(10px);
+}
+
+.step-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    min-width: 60px;
+}
+
+.step-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
     color: var(--text-main);
 }
 
-.deadlines-table td {
-    border-bottom: 1px solid var(--border);
+.step-card p {
+    color: var(--text-muted);
+    margin: 0;
 }
 
-.status-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
+/* Important Dates */
+.dates {
+    background: #f1f5f9;
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
 }
 
-.status-badge.open {
-    background: #dcfce7;
-    color: #15803d;
+.date-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #cbd5e1;
 }
 
-.status-badge.pending {
-    background: #fef9c3;
-    color: #854d0e;
+.date-item:last-child {
+    border-bottom: none;
 }
 
-/* Responsive Adjustments */
+.date-item span {
+    color: var(--text-muted);
+}
+
+.date-item strong {
+    font-size: 1.25rem;
+    color: var(--accent);
+}
+
+/* Contact Section */
+.admission-contact {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 3rem;
+    border-radius: 32px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.admission-contact h3 {
+    color: var(--text-main);
+}
+
+.admission-contact p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .hero-content h1 {
+    .admission-header h2 {
         font-size: 2.5rem;
     }
-    
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
+
+    .container {
+        padding: 2rem 1rem;
     }
-    
-    .btn-primary, .btn-secondary {
-        width: 100%;
-        max-width: 300px;
+
+    .date-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
 }
