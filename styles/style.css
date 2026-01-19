@@ -102,3 +102,111 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+/* ==========================================
+   Contact Page (Talal Saleem) – Scoped Styles
+   ========================================== */
+
+.contact-page {
+  margin-top: 30px;
+}
+
+/* Header */
+.contact-page .contact-header {
+  margin-bottom: 30px;
+}
+
+.contact-page .contact-title {
+  font-size: 26px;
+  margin-bottom: 6px;
+  color: #004d40;
+}
+
+.contact-page .contact-subtitle {
+  font-size: 14px;
+  color: #555555;
+  max-width: 700px;
+}
+
+/* Grid Layout */
+.contact-page .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 100%));
+  gap: 22px;
+}
+
+/* Card */
+.contact-page .contact-card {
+  background-color: #ffffff;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-page .contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Header */
+.contact-page .contact-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.contact-page .contact-card-header h3 {
+  font-size: 18px;
+  color: #222222;
+}
+
+.contact-page .contact-tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: #e0f2f1;
+  color: #00695c;
+  font-weight: 600;
+}
+
+/* Card Content */
+.contact-page .contact-description {
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 14px;
+}
+
+/* Details List */
+.contact-page .contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-page .contact-details li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.contact-page .contact-details span {
+  font-weight: 600;
+  color: #004d40;
+}
+
+/* Footer */
+.contact-page .contact-footer {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #dddddd;
+}
+
+.contact-page .contact-footer p {
+  font-size: 13px;
+  color: #666666;
+  max-width: 800px;
+}
