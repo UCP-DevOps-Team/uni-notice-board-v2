@@ -1,0 +1,251 @@
+/* Admissions Page Special Styles */
+
+:root {
+    --admission-accent: #2563eb;
+    --admission-bg: #f8fafc;
+    --admission-card-bg: rgba(255, 255, 255, 0.8);
+    --admission-border: rgba(226, 232, 240, 0.8);
+    --admission-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.admissions-page {
+    padding-bottom: 4rem;
+}
+
+/* Hero Section */
+.admission-hero {
+    background: var(--admission-gradient);
+    padding: 6rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content .text-accent {
+    color: var(--accent);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--bg);
+    transform: translateY(-2px);
+}
+
+/* Sections Common */
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-main);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header p {
+    color: var(--text-muted);
+}
+
+/* Admission Steps */
+.admission-steps {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background: var(--admission-card-bg);
+    border: 1px solid var(--admission-border);
+    padding: 2rem;
+    border-radius: var(--radius);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(59, 130, 246, 0.1);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.step-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Programs Section */
+.admission-programs {
+    padding: 4rem 0;
+    background: var(--bg);
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.program-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.program-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.program-details {
+    list-style: none;
+    padding: 0;
+}
+
+.program-details li {
+    padding: 0.5rem 0;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--bg);
+}
+
+.program-details li:last-child {
+    border-bottom: none;
+}
+
+/* Deadlines Table */
+.admission-deadlines {
+    padding: 4rem 0;
+}
+
+.deadlines-table-container {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.deadlines-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.deadlines-table th, .deadlines-table td {
+    padding: 1.25rem 2rem;
+    text-align: left;
+}
+
+.deadlines-table th {
+    background: var(--bg);
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.deadlines-table td {
+    border-bottom: 1px solid var(--border);
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-badge.open {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-badge.pending {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+}
