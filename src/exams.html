@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="University Digital Notice Board" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/exams.css" />
     <title>University Digital Notice Board</title>
 </head>
 
@@ -95,28 +96,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        (function () {
-            const links = document.querySelectorAll(".nav-links a");
-            const currentPath = window.location.pathname;
-
-            links.forEach((link) => {
-                const linkHref = link.getAttribute("href");
-
-                if (
-                    currentPath === "/" ||
-                    currentPath.endsWith("index.html")
-                ) {
-                    if (linkHref === "index.html") {
-                        link.classList.add("active");
-                    }
-                } else if (currentPath.includes(linkHref)) {
-                    link.classList.add("active");
-                }
-            });
-        })();
-    </script>
 </body>
 
 </html>
