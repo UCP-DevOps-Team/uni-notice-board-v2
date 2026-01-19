@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="University Digital Notice Board" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/notices.css">
     <title>University Digital Notice Board</title>
 </head>
 
@@ -13,7 +14,7 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <h1 class="logo">UniNotice</h1>
+                <h1 class="logo">University Notice Board</h1>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li>
@@ -36,13 +37,58 @@
         </nav>
     </header>
 
-    <main class="container"></main>
+    <main class="container notices-page">
+        <div class="page-header">
+            <h1>University Notices</h1>
+            <p>Official announcements from administration, academics, and examination department.</p>
+        </div>
+
+        <div class="notices-grid">
+            <article class="notice-card important">
+                <span class="badge">Important</span>
+                <h3>Midterm Examination Schedule Released</h3>
+                <p class="notice-meta">Jan 18, 2026 | Examination Department</p>
+                <p>
+                    The midterm examination schedule for all undergraduate programs
+                    has been uploaded. Students are advised to check their respective
+                    departments for details.
+                </p>
+            </article>
+
+            <article class="notice-card">
+                <h3>Holiday Notice – International Mother Language Day</h3>
+                <p class="notice-meta">Jan 17, 2026 | Administration</p>
+                <p>
+                    The university will remain closed on 21st February in observance
+                    of International Mother Language Day.
+                </p>
+            </article>
+
+            <article class="notice-card">
+                <h3>Supplementary Exam Registration – Fall 2025</h3>
+                <p class="notice-meta">Jan 15, 2026 | Examination</p>
+                <p>
+                    Students wishing to appear in supplementary examinations must
+                    complete their registration before January 25th.
+                </p>
+            </article>
+
+            <article class="notice-card">
+                <h3>Library Timing Update</h3>
+                <p class="notice-meta">Jan 12, 2026 | Library</p>
+                <p>
+                    The university library will now remain open till 9:00 PM on
+                    weekdays starting next week.
+                </p>
+            </article>
+        </div>
+    </main>
 
     <footer>
         <div class="container">
             <p>
                 &copy; 2026 University Digital Notice Board | Powered by
-                Devops Team
+                DevOps Team
             </p>
         </div>
     </footer>
