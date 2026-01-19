@@ -1,0 +1,103 @@
+/* ============================= */
+/* EXAMS PAGE STYLES */
+/* Matches Global Design System */
+/* ============================= */
+
+.exam-section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--accent);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.exam-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.15),
+        0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+
+.exam-section h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.exam-table {
+    border-collapse: collapse;
+    margin-top: 1rem;
+    width: 100%;
+    background: var(--surface);
+}
+
+
+.exam-table th {
+    background: linear-gradient(to bottom right,
+            var(--primary),
+            var(--primary-light));
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.75rem;
+    text-transform: uppercase;
+}
+
+
+.exam-table td {
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+
+.exam-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+
+.exam-rules {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.exam-rules li {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+
+@media (max-width: 768px) {
+    .exam-section {
+        padding: 1.5rem;
+    }
+
+    .exam-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .exam-table th,
+    .exam-table td {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exam-section {
+        padding: 1.25rem;
+    }
+
+    .exam-rules li {
+        font-size: 0.9rem;
+    }
+}
